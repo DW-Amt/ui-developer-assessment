@@ -1,0 +1,24 @@
+{
+  "name": "assessment-ui-developer",
+  "version": "1.0.0",
+  "description": "In this assessment you will show your abilities and experience with regards to integrating modern technologies like React with an old codebase that uses MooTools.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rpmsoftware/assessment-ui-developer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rpmsoftware/assessment-ui-developer/issues"
+  },
+  "homepage": "https://github.com/rpmsoftware/assessment-ui-developer#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react-app": "^3.1.2"
+  }
+}
