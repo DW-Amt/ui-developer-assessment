@@ -8,24 +8,19 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var LikeButton = function (_React$Component) {
-    _inherits(LikeButton, _React$Component);
+var NewComponent = function (_React$Component) {
+    _inherits(NewComponent, _React$Component);
 
-    function LikeButton(props) {
-        _classCallCheck(this, LikeButton);
+    function NewComponent(props) {
+        _classCallCheck(this, NewComponent);
 
-        var _this = _possibleConstructorReturn(this, (LikeButton.__proto__ || Object.getPrototypeOf(LikeButton)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (NewComponent.__proto__ || Object.getPrototypeOf(NewComponent)).call(this, props));
 
-        _this.state = { liked: false };
+        _this.state = { connect: false };
         return _this;
     }
 
-    _createClass(LikeButton, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            setTimeout(this.connectingButton, 5);
-        }
-    }, {
+    _createClass(NewComponent, [{
         key: 'connectingButton',
         value: function connectingButton() {
             var _iteratorNormalCompletion = true;
@@ -36,7 +31,6 @@ var LikeButton = function (_React$Component) {
                 for (var _iterator = oldCom.getElementsByTagName('button')[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
                     var i = _step.value;
 
-                    console.log('componentDidMount() lifecycle');
                     i.addEventListener('click', function (event) {
                         document.getElementById("response").firstChild.textContent = event.target.firstChild.textContent;
                     }, false);
@@ -83,35 +77,21 @@ var LikeButton = function (_React$Component) {
                     }
                 }
             }
-
-            var _iteratorNormalCompletion3 = true;
-            var _didIteratorError3 = false;
-            var _iteratorError3 = undefined;
-
-            try {
-                for (var _iterator3 = newCom.getElementsByTagName('div')[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
-                    var j = _step3.value;
-
-                    j.innerHTML = "";
-                }
-            } catch (err) {
-                _didIteratorError3 = true;
-                _iteratorError3 = err;
-            } finally {
-                try {
-                    if (!_iteratorNormalCompletion3 && _iterator3.return) {
-                        _iterator3.return();
-                    }
-                } finally {
-                    if (_didIteratorError3) {
-                        throw _iteratorError3;
-                    }
-                }
-            }
         }
     }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
+            if (!this.state.connect) {
+                return React.createElement(
+                    'button',
+                    { onClick: function onClick() {
+                            _this2.connectingButton();_this2.setState({ connect: true });
+                        } },
+                    'connect'
+                );
+            }
             return React.createElement(
                 'div',
                 null,
@@ -129,9 +109,9 @@ var LikeButton = function (_React$Component) {
         }
     }]);
 
-    return LikeButton;
+    return NewComponent;
 }(React.Component);
 
 var newCom = document.querySelector('#new');
 var oldCom = document.querySelector('#old');
-ReactDOM.render(React.createElement(LikeButton, null), newCom);
+ReactDOM.render(React.createElement(NewComponent, null), newCom);

@@ -1,15 +1,11 @@
 'use strict';
-class LikeButton extends React.Component {
+class NewComponent extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { liked: false };
-    }
-    componentDidMount() {
-        setTimeout(this.connectingButton, 5)
+        this.state = { connect: false };
     }
     connectingButton() {
         for (let i of oldCom.getElementsByTagName('button')) {
-            console.log('componentDidMount() lifecycle');
             i.addEventListener('click', (event) => {
                 document.getElementById("response")
                     .firstChild.textContent = event.target.firstChild.textContent
@@ -17,12 +13,16 @@ class LikeButton extends React.Component {
         }
     }
     connectinginfo() {
-        for (let i of oldCom.getElementsByTagName('div'))
+        for (let i of oldCom.getElementsByTagName('div')) {
             i.innerHTML = "";
-        for (let j of newCom.getElementsByTagName('div'))
-            j.innerHTML = "";
+        }
     }
     render() {
+        if (!this.state.connect) {
+            return ( <button onClick={() => { this.connectingButton(); this.setState({ connect: true }); }}>
+                connect
+            </button>)
+        }
         return (<div>
             <button onClick={this.connectinginfo}>
                 reset
@@ -34,4 +34,4 @@ class LikeButton extends React.Component {
 }
 let newCom = document.querySelector('#new');
 let oldCom = document.querySelector('#old');
-ReactDOM.render(<LikeButton />, newCom);
+ReactDOM.render(<NewComponent />, newCom);
