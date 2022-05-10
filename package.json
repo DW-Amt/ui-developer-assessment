@@ -4,7 +4,8 @@
   "description": "In this assessment you will show your abilities and experience with regards to integrating modern technologies like React with an old codebase that uses MooTools.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "magic": "webpack"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,17 @@
   },
   "homepage": "https://github.com/rpmsoftware/assessment-ui-developer#readme",
   "dependencies": {
+    "@types/jest": "^27.5.0",
+    "@types/node": "^17.0.31",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.3",
     "babel-cli": "^6.26.0",
-    "babel-preset-react-app": "^3.1.2"
+    "babel-preset-react-app": "^3.1.2",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "ts-loader": "^9.3.0",
+    "typescript": "^4.6.4",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2"
   }
 }
