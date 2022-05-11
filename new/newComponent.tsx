@@ -1,7 +1,8 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
 let newCom = document.querySelector('#new');
-export default class NewComponent extends React.Component<{ connect: boolean }> {
+
+export class NewComponent extends React.Component<{ connect: boolean }> {
         state = { connect: false };
     connectingButton() {
         let oldCom = (document.querySelector('#old')) as HTMLElement;

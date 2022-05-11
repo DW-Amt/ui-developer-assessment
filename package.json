@@ -4,8 +4,9 @@
   "description": "In this assessment you will show your abilities and experience with regards to integrating modern technologies like React with an old codebase that uses MooTools.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "magic": "webpack"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "model": "webpack"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,8 @@
   },
   "homepage": "https://github.com/rpmsoftware/assessment-ui-developer#readme",
   "dependencies": {
-    "@types/jest": "^27.5.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.2.0",
     "@types/node": "^17.0.31",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.3",
@@ -27,9 +29,19 @@
     "babel-preset-react-app": "^3.1.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "ts-jest": "^28.0.2",
     "ts-loader": "^9.3.0",
     "typescript": "^4.6.4",
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "@types/jest": "^27.5.0",
+    "babel-jest": "^28.1.0",
+    "jest": "^28.1.0"
   }
 }
